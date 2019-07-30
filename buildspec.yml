@@ -11,13 +11,10 @@ phases:
    commands:
      - echo Build started on `date`
      - npm run build
- build:
-   commands:
-     - aws s3 sync --delete . "s3://static-website111-artifact-bucket"
  post_build:
    commands:
      - echo "post_build step"
+     - aws s3 sync --delete . "s3://static-website111-artifact-bucket"
 artifacts:
  files:
-   - 'build/*'
- base-directory: build
+   - build*/**
