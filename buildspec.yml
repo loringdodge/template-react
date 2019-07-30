@@ -17,4 +17,5 @@ phases:
      - aws s3 sync --delete . "s3://static-website111-artifact-bucket"
 artifacts:
  files:
-   - build*/**
+   - **/*
+   base-directory: 'build'
