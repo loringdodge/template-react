@@ -14,8 +14,4 @@ phases:
  post_build:
    commands:
      - echo "post_build step"
-     - aws s3 sync --delete . "s3://static-website111-artifact-bucket"
-artifacts:
- files:
-   - **/*
- base-directory: 'build'
+     - aws s3 sync --delete build/ "s3://static-website111-artifact-bucket"
